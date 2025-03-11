@@ -24,7 +24,7 @@ const Campaigns = () => {
   const fetchCampaigns = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("http://localhost:3001/", {
+      const response = await axios.get("https://referral-system-iiec.onrender.com/", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCampaigns(response.data);
@@ -38,7 +38,7 @@ const Campaigns = () => {
   const createCampaign = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.post("http://localhost:3001/", newCampaign, {
+      const response = await axios.post("https://referral-system-iiec.onrender.com/", newCampaign, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCampaigns([...campaigns, response.data]);
@@ -51,7 +51,7 @@ const Campaigns = () => {
   const deleteCampaign = async (id: string) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:3001/campaign/${id}`, {
+      await axios.delete(`https://referral-system-iiec.onrender.com/campaign/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCampaigns(campaigns.filter((c) => c._id !== id));
