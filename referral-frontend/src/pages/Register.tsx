@@ -34,7 +34,7 @@ const Register = () => {
     setError("");
 
     try {
-      await axios.post("http://localhost:3001/register", formData);
+      await axios.post("https://referral-system-iiec.onrender.com/register", formData);
       alert("Registration successful! Please log in.");
       navigate("/login");
     } catch (err: any) {
