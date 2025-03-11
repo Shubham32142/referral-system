@@ -29,12 +29,12 @@ const BusinessDashboard = () => {
   const fetchDashboardData = async () => {
     try {
       const token = localStorage.getItem("token");
-      const statsResponse = await axios.get("http://localhost:3001/stats", {
+      const statsResponse = await axios.get("https://referral-system-iiec.onrender.com/stats", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
       const referralsResponse = await axios.get(
-        "http://localhost:3001/referrals",
+        "https://referral-system-iiec.onrender.com/referrals",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
