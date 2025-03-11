@@ -47,7 +47,7 @@ export function AdminPanel() {
   const fetchReferrals = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("http://localhost:3001/referrals", {
+      const response = await axios.get("https://referral-system-iiec.onrender.com/referrals", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -64,7 +64,7 @@ export function AdminPanel() {
       setProcessing((prev) => ({ ...prev, [id]: true }));
       const token = localStorage.getItem("token");
       await axios.put(
-        `http://localhost:3001/rewardStatus/${id}`,
+        `https://referral-system-iiec.onrender.com/rewardStatus/${id}`,
         {
           rewardStatus: status,
         },
