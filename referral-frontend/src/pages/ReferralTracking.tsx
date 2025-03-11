@@ -19,7 +19,7 @@ const ReferralTracking = () => {
   const fetchReferralStats = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("http://localhost:3001/referral-stats", {
+      const response = await axios.get("https://referral-system-iiec.onrender.com/referral-stats", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -34,7 +34,7 @@ const ReferralTracking = () => {
   const copyToClipboard = () => {
     if (stats?.referralCode) {
       navigator.clipboard.writeText(
-        `http://localhost:3000/referral/${stats.referralCode}`
+        `https://referral-system-iiec.onrender.com/referral/${stats.referralCode}`
       );
       alert("Referral link copied to clipboard!");
     }
@@ -50,7 +50,7 @@ const ReferralTracking = () => {
       <div className="bg-gray-100 p-4 rounded mb-4">
         <h2 className="text-lg font-bold">Your Referral Link:</h2>
         <p className="text-blue-600 break-all">
-          http://localhost:3000/referral/{stats?.referralCode}
+          https://referral-system-iiec.onrender.com/referral/{stats?.referralCode}
         </p>
         <button
           onClick={copyToClipboard}
