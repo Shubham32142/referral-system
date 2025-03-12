@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: referral-system
+    name: referral-frontend
     env: static
     staticPublishPath: /dist
     routes:
